@@ -1,0 +1,27 @@
+Source: ruby-msgpack
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Taku YASUI <tach@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb (>= 1.0~),
+               ruby-json,
+               ruby-rspec
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-msgpack.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-msgpack
+Homepage: https://msgpack.org/
+XS-Ruby-Versions: all
+Testsuite: autopkgtest-pkg-ruby
+
+Package: ruby-msgpack
+Architecture: any
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby | ruby-interpreter,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Multi-Arch: same
+Description: Ruby library for MessagePack
+ ruby-msgpack is Ruby library for MessagePack, a binary-based efficient object
+ serialization. It enables to exchange structured objects between many
+ languages like JSON. But unlike JSON, it is very fast and small.

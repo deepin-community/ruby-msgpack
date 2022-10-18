@@ -1,0 +1,21 @@
+---
+- spec/cases_spec.rb
+- spec/cruby/buffer_io_spec.rb
+- spec/cruby/buffer_packer.rb
+- spec/cruby/buffer_spec.rb
+- spec/cruby/buffer_unpacker.rb
+- spec/cruby/unpacker_spec.rb
+- spec/ext_value_spec.rb
+- spec/exttypes.rb
+- spec/factory_spec.rb
+- spec/format_spec.rb
+#- spec/jruby/benchmarks/shootout_bm.rb
+#- spec/jruby/benchmarks/symbolize_keys_bm.rb
+#- spec/jruby/unpacker_spec.rb
+- spec/msgpack_spec.rb
+- spec/pack_spec.rb
+- spec/packer_spec.rb
+- spec/random_compat.rb
+- spec/spec_helper.rb
+- spec/unpack_spec.rb
+- spec/unpacker_spec.rb

@@ -1,0 +1,163 @@
+From: Debian Ruby Extras Maintainers
+ <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Date: Fri, 29 Jul 2016 16:17:14 +0300
+Subject: Fix paths for spec_helper & random_compat
+
+---
+ spec/cases_spec.rb            | 2 +-
+ spec/cruby/buffer_io_spec.rb  | 4 ++--
+ spec/cruby/buffer_packer.rb   | 2 +-
+ spec/cruby/buffer_spec.rb     | 4 ++--
+ spec/cruby/buffer_unpacker.rb | 2 +-
+ spec/cruby/unpacker_spec.rb   | 2 +-
+ spec/ext_value_spec.rb        | 2 +-
+ spec/factory_spec.rb          | 2 +-
+ spec/format_spec.rb           | 2 +-
+ spec/msgpack_spec.rb          | 2 +-
+ spec/pack_spec.rb             | 2 +-
+ spec/packer_spec.rb           | 2 +-
+ spec/spec_helper.rb           | 1 +
+ spec/unpack_spec.rb           | 2 +-
+ spec/unpacker_spec.rb         | 2 +-
+ 15 files changed, 17 insertions(+), 16 deletions(-)
+
+--- a/spec/cases_spec.rb
++++ b/spec/cases_spec.rb
+@@ -1,4 +1,4 @@
+-require 'spec_helper'
++require 'spec/spec_helper'
+ require 'json'
+ 
+ describe MessagePack do
+--- a/spec/cruby/buffer_io_spec.rb
++++ b/spec/cruby/buffer_io_spec.rb
+@@ -1,5 +1,5 @@
+-require 'spec_helper'
+-require 'random_compat'
++require 'spec/spec_helper'
++require 'spec/random_compat'
+ 
+ require 'stringio'
+ if defined?(Encoding)
+--- a/spec/cruby/buffer_packer.rb
++++ b/spec/cruby/buffer_packer.rb
+@@ -1,5 +1,5 @@
+ # encoding: ascii-8bit
+-require 'spec_helper'
++require 'spec/spec_helper'
+ 
+ require 'stringio'
+ if defined?(Encoding)
+--- a/spec/cruby/buffer_spec.rb
++++ b/spec/cruby/buffer_spec.rb
+@@ -1,5 +1,5 @@
+-require 'spec_helper'
+-require 'random_compat'
++require 'spec/spec_helper'
++require 'spec/random_compat'
+ 
+ require 'stringio'
+ if defined?(Encoding)
+--- a/spec/cruby/buffer_unpacker.rb
++++ b/spec/cruby/buffer_unpacker.rb
+@@ -1,5 +1,5 @@
+ # encoding: ascii-8bit
+-require 'spec_helper'
++require 'spec/spec_helper'
+ 
+ describe Unpacker do
+   let :unpacker do
+--- a/spec/cruby/unpacker_spec.rb
++++ b/spec/cruby/unpacker_spec.rb
+@@ -1,5 +1,5 @@
+ # encoding: ascii-8bit
+-require 'spec_helper'
++require 'spec/spec_helper'
+ 
+ describe Unpacker do
+   let :unpacker do
+--- a/spec/ext_value_spec.rb
++++ b/spec/ext_value_spec.rb
+@@ -1,5 +1,5 @@
+ # encoding: ascii-8bit
+-require 'spec_helper'
++require 'spec/spec_helper'
+ 
+ describe MessagePack::ExtensionValue do
+   subject do
+--- a/spec/factory_spec.rb
++++ b/spec/factory_spec.rb
+@@ -1,5 +1,5 @@
+ # encoding: ascii-8bit
+-require 'spec_helper'
++require 'spec/spec_helper'
+ 
+ describe MessagePack::Factory do
+   subject do
+--- a/spec/format_spec.rb
++++ b/spec/format_spec.rb
+@@ -1,5 +1,5 @@
+ # encoding: ascii-8bit
+-require 'spec_helper'
++require 'spec/spec_helper'
+ 
+ describe MessagePack do
+   it "nil" do
+--- a/spec/msgpack_spec.rb
++++ b/spec/msgpack_spec.rb
+@@ -1,6 +1,6 @@
+ # encoding: ascii-8bit
+ 
+-require 'spec_helper'
++require 'spec/spec_helper'
+ 
+ def utf8enc(str)
+   str.encode('UTF-8')
+--- a/spec/pack_spec.rb
++++ b/spec/pack_spec.rb
+@@ -1,5 +1,5 @@
+ # encoding: ascii-8bit
+-require 'spec_helper'
++require 'spec/spec_helper'
+ 
+ require 'stringio'
+ if defined?(Encoding)
+--- a/spec/packer_spec.rb
++++ b/spec/packer_spec.rb
+@@ -1,5 +1,5 @@
+ # encoding: ascii-8bit
+-require 'spec_helper'
++require 'spec/spec_helper'
+ 
+ require 'stringio'
+ require 'tempfile'
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -13,6 +13,7 @@
+   GC.stress = true
+ end
+ 
++require 'rspec'
+ require 'msgpack'
+ 
+ def java?
+--- a/spec/unpack_spec.rb
++++ b/spec/unpack_spec.rb
+@@ -1,5 +1,5 @@
+ # encoding: ascii-8bit
+-require 'spec_helper'
++require 'spec/spec_helper'
+ 
+ require 'stringio'
+ if defined?(Encoding)
+--- a/spec/unpacker_spec.rb
++++ b/spec/unpacker_spec.rb
+@@ -4,7 +4,7 @@
+ require 'tempfile'
+ require 'zlib'
+ 
+-require 'spec_helper'
++require 'spec/spec_helper'
+ 
+ describe MessagePack::Unpacker do
+   let :unpacker do
